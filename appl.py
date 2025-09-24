@@ -76,7 +76,7 @@ elif st.session_state.stage == "quiz":
                 st.session_state.question_key += 1
             else:
                 # No more questions
-                st.session_state.stage = "end"
+                # st.session_state.stage = "end"
                 st.rerun()
 
         # Display player and score
@@ -160,4 +160,5 @@ elif st.session_state.stage == "end":
     if st.button("Replay"):
         st.session_state.stage = "quiz"
         init_quiz()
+
         st.rerun()
