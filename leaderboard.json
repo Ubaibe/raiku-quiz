@@ -1,0 +1,34 @@
+{
+    "ubaibe": {
+        "high_score": 17,
+        "cumulative_score": 193
+    },
+    "ibe": {
+        "high_score": 9,
+        "cumulative_score": 16
+    },
+    "Anonymous": {
+        "high_score": 5,
+        "cumulative_score": 5
+    },
+    "xoxo": {
+        "high_score": 8,
+        "cumulative_score": 18
+    },
+    "test_user": {
+        "high_score": 5,
+        "cumulative_score": 5
+    },
+    "alice": {
+        "high_score": 8,
+        "cumulative_score": 15
+    },
+    "bob": {
+        "high_score": 6,
+        "cumulative_score": 6
+    },
+    "charlie": {
+        "high_score": 9,
+        "cumulative_score": 9
+    }
+}
