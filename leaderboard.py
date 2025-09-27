@@ -48,11 +48,11 @@ class Leaderboard:
             reverse=True
 
         )
-        def get_user_stats(self, username: str):
-        """Get detailed statistics for a specific user."""
-        if username in self.scores:
-            return self.scores[username]
-        return None
+    def get_user_stats(self, username: str):
+    """Get detailed statistics for a specific user."""
+    if username in self.scores:
+        return self.scores[username]
+    return None
 
     def get_leaderboard_stats(self):
         """Get overall leaderboard statistics."""
@@ -84,3 +84,4 @@ class Leaderboard:
             if name == username:
                 return i
         return len(scores) + 1  # If user not found, return rank after last
+
