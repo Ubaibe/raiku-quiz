@@ -46,4 +46,41 @@ class Leaderboard:
             self.scores.items(),
             key=lambda x: x[1]["high_score"],
             reverse=True
+
         )
+        def get_user_stats(self, username: str):
+        """Get detailed statistics for a specific user."""
+        if username in self.scores:
+            return self.scores[username]
+        return None
+
+    def get_leaderboard_stats(self):
+        """Get overall leaderboard statistics."""
+        if not self.scores:
+            return {
+                "total_players": 0,
+                "total_games": 0,
+                "avg_high_score": 0,
+                "max_high_score": 0,
+                "total_points": 0
+            }
+
+        total_players = len(self.scores)
+        total_points = sum(user_data["cumulative_score"] for user_data in self.scores.values())
+        high_scores = [user_data["high_score"] for user_data in self.scores.values()]
+
+        return {
+            "total_players": total_players,
+            "total_games": total_points,
+            "avg_high_score": sum(high_scores) / total_players,
+            "max_high_score": max(high_scores),
+            "total_points": total_points
+        }
+
+    def get_user_rank(self, username: str):
+        """Get the rank of a specific user (1-based)."""
+        scores = self.get_sorted_scores()
+        for i, (name, _) in enumerate(scores, 1):
+            if name == username:
+                return i
+        return len(scores) + 1  # If user not found, return rank after last
