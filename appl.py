@@ -50,7 +50,7 @@ def init_quiz():
 if st.session_state.stage == "username":
     st.title("Quiz Game")
     st.write("Enter your username to start the quiz:")
-    username_input = st.text_input("Username", key="username_input")
+    username_input = st.text_input("Discord Username", key="username_input")
     if st.button("Start Game"):
         if st.session_state.username_obj.set_username(username_input):
             init_quiz()
@@ -315,4 +315,5 @@ elif st.session_state.stage == "end":
     #     init_quiz()
 
     #     st.rerun()
+
 
